@@ -1,0 +1,1157 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Теплицы71 - Производство теплиц в Туле</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #2e7d32;
+            --primary-dark: #1b5e20;
+            --secondary: #ff9800;
+            --light: #f5f5f5;
+            --dark: #212121;
+            --gray: #757575;
+            --bg-color: #f9f9f9;
+            --text-color: #212121;
+            --card-bg: white;
+            --header-bg: white;
+            --footer-bg: #212121;
+            --shadow: 0 2px 10px rgba(0,0,0,0.1);
+            --hero-overlay: rgba(0,0,0,0.6);
+        }
+
+        .dark-mode {
+            --primary: #4caf50;
+            --primary-dark: #2e7d32;
+            --secondary: #ffa726;
+            --light: #424242;
+            --dark: #f5f5f5;
+            --gray: #bdbdbd;
+            --bg-color: #121212;
+            --text-color: #f5f5f5;
+            --card-bg: #1e1e1e;
+            --header-bg: #1e1e1e;
+            --footer-bg: #121212;
+            --shadow: 0 2px 10px rgba(0,0,0,0.3);
+            --hero-overlay: rgba(0,0,0,0.8);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            transition: background-color 0.3s, color 0.3s;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+            background-color: var(--bg-color);
+        }
+        
+        /* Шапка */
+        header {
+            background-color: var(--header-bg);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 20px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .logo i {
+            font-size: 28px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        nav a:hover {
+            color: var(--primary);
+        }
+        
+        nav a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            bottom: -5px;
+            left: 0;
+            transition: width 0.3s;
+        }
+        
+        nav a:hover::after {
+            width: 100%;
+        }
+        
+        .contact-info {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .phone {
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .phone:hover {
+            color: var(--primary);
+        }
+
+        /* Переключатель темы */
+        .theme-switcher {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            padding: 8px 12px;
+            border-radius: 20px;
+            background-color: var(--light);
+            color: var(--text-color);
+        }
+
+        .theme-switcher i {
+            font-size: 18px;
+        }
+        
+        /* Герой-секция */
+        .hero {
+            background: linear-gradient(var(--hero-overlay), var(--hero-overlay)), url('https://images.unsplash.com/photo-1605000797499-95a51c5269ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .hero h1 {
+            font-size: 42px;
+            margin-bottom: 20px;
+            animation: fadeInUp 1s ease;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 30px;
+            animation: fadeInUp 1s ease 0.3s both;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+            animation: fadeInUp 1s ease 0.6s both;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #e65100;
+        }
+        
+        /* Продукты */
+        .products-section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        
+        .section-title h2 {
+            font-size: 36px;
+            color: var(--primary);
+            margin-bottom: 15px;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 50%;
+            height: 3px;
+            background: var(--primary);
+            bottom: -10px;
+            left: 25%;
+        }
+        
+        .section-title p {
+            color: var(--text-color);
+        }
+        
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .product-card {
+            background: var(--card-bg);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .product-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .product-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .product-card:hover .product-image img {
+            transform: scale(1.1);
+        }
+        
+        .product-info {
+            padding: 20px;
+        }
+        
+        .product-info h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .product-price {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--text-color);
+            margin-bottom: 15px;
+        }
+        
+        .product-features {
+            margin-bottom: 20px;
+            color: var(--gray);
+        }
+        
+        .product-features li {
+            margin-bottom: 5px;
+            list-style-type: none;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .product-features li::before {
+            content: '\f00c';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        /* Модальное окно */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 2000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .modal.show {
+            display: block;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background-color: var(--card-bg);
+            margin: 50px auto;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateY(-50px);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .modal.show .modal-content {
+            transform: translateY(0);
+        }
+        
+        .modal-header {
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
+            position: relative;
+        }
+        
+        .modal-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 24px;
+            cursor: pointer;
+            color: white;
+            transition: transform 0.3s;
+        }
+        
+        .close:hover {
+            transform: rotate(90deg);
+        }
+        
+        .modal-body {
+            display: flex;
+            flex-direction: column;
+            padding: 0;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        
+        .modal-details {
+            padding: 30px;
+        }
+        
+        .modal-description {
+            margin-bottom: 20px;
+            line-height: 1.8;
+            color: var(--text-color);
+        }
+        
+        .modal-features {
+            margin-bottom: 30px;
+        }
+        
+        .modal-features li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 25px;
+            color: var(--text-color);
+        }
+        
+        .modal-features li::before {
+            content: '\f058';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 30px;
+            background-color: var(--light);
+            border-top: 1px solid var(--gray);
+        }
+        
+        .modal-price {
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--primary);
+        }
+
+        /* Окно контактов */
+        .contacts-modal {
+            display: none;
+            position: fixed;
+            z-index: 2001;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            overflow-y: auto;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .contacts-modal.show {
+            display: block;
+            opacity: 1;
+        }
+        
+        .contacts-content {
+            background-color: var(--card-bg);
+            margin: 50px auto;
+            width: 90%;
+            max-width: 500px;
+            border-radius: 10px;
+            overflow: hidden;
+            transform: translateY(-50px);
+            transition: transform 0.3s;
+            position: relative;
+        }
+        
+        .contacts-modal.show .contacts-content {
+            transform: translateY(0);
+        }
+        
+        .contacts-header {
+            padding: 20px;
+            background-color: var(--primary);
+            color: white;
+            position: relative;
+        }
+        
+        .contacts-title {
+            font-size: 24px;
+            margin: 0;
+        }
+        
+        .contacts-body {
+            padding: 30px;
+        }
+        
+        .contact-info-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .contact-info-icon {
+            font-size: 20px;
+            color: var(--primary);
+            margin-right: 15px;
+            width: 30px;
+            text-align: center;
+        }
+
+        .contact-info-text {
+            color: var(--text-color);
+        }
+        
+        /* Преимущества */
+        .features {
+            padding: 80px 20px;
+            background-color: var(--light);
+        }
+        
+        .features-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-card {
+            background: var(--card-bg);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 50px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+
+        .feature-card p {
+            color: var(--gray);
+        }
+        
+        /* Футер */
+        footer {
+            background-color: var(--footer-bg);
+            color: white;
+            padding: 50px 20px 20px;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-logo {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .footer-logo i {
+            font-size: 28px;
+        }
+        
+        .footer-about p {
+            margin-bottom: 20px;
+            opacity: 0.8;
+        }
+        
+        .footer-links h3, .footer-contact h3 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-links h3::after, .footer-contact h3::after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 2px;
+            background-color: var(--primary);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: white;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+        
+        .footer-links a:hover {
+            opacity: 1;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .contact-icon {
+            font-size: 18px;
+            color: var(--primary);
+            margin-top: 3px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            opacity: 0.7;
+        }
+
+        /* Кнопка "Наверх" */
+        .scroll-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background-color: var(--primary);
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s;
+            z-index: 999;
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .scroll-top:hover {
+            background-color: var(--primary-dark);
+            transform: translateY(-3px);
+        }
+        
+        /* Анимации */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h1 {
+                font-size: 32px;
+            }
+            
+            .modal-body {
+                flex-direction: column;
+            }
+            
+            .modal-image {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Шапка -->
+    <header>
+        <div class="header-container">
+            <a href="#" class="logo">
+                <i class="fas fa-leaf"></i>
+                Теплицы71
+            </a>
+            
+            <nav>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#products">Каталог</a></li>
+                    <li><a href="#features">Преимущества</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </nav>
+            
+            <div class="contact-info">
+                <div class="theme-switcher" id="themeSwitcher">
+                    <i class="fas fa-moon"></i>
+                    <span>Темная тема</span>
+                </div>
+                <a href="tel:+79207752079" class="phone">
+                    <i class="fas fa-phone"></i> +7 (920) 775-20-79
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой-секция -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Профессиональные теплицы в Туле</h1>
+            <p>Качественные теплицы от производителя с гарантией 10 лет. Собственное производство, доступные цены и быстрая доставка.</p>
+            <button class="btn" onclick="document.getElementById('products').scrollIntoView({behavior: 'smooth'})">
+                Выбрать товар
+            </button>
+            <button class="btn btn-secondary" onclick="document.getElementById('contacts').scrollIntoView({behavior: 'smooth'})">
+                <i class="fas fa-phone"></i> Заказать звонок
+            </button>
+        </div>
+    </section>
+
+    <!-- Продукты -->
+    <section class="products-section" id="products">
+        <div class="section-title">
+            <h2>Наши товары</h2>
+            <p>Выберите товар для вашего участка</p>
+        </div>
+        
+        <div class="products-grid">
+            <!-- Товар 1 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.imgur.com/pXj6dZc.jpg" alt="Теплица">
+                </div>
+                <div class="product-info">
+                    <h3>Теплица</h3>
+                    <div class="product-price">18 900 руб.</div>
+                    <ul class="product-features">
+                        <li>Размер: 3x4 м</li>
+                        <li>Материал: оцинкованная сталь</li>
+                        <li>Покрытие: поликарбонат 4 мм</li>
+                    </ul>
+                    <button class="btn" onclick="openModal(
+                        'Теплица', 
+                        'https://i.imgur.com/pXj6dZc.jpg', 
+                        'Идеальная теплица для небольших участков. Прочная конструкция из оцинкованной стали выдерживает снеговые нагрузки до 120 кг/м². Поликарбонатное покрытие обеспечивает оптимальное рассеивание света и защиту от ультрафиолета.',
+                        ['Размеры: 3x4 м', 'Высота: 2.1 м', 'Каркас: оцинкованная сталь 20x20 мм', 'Покрытие: сотовый поликарбонат 4 мм', 'Фундамент: не требуется', 'Гарантия: 5 лет'],
+                        '18 900 руб.'
+                    )">
+                        <i class="fas fa-shopping-cart"></i> Заказать
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Товар 2 -->
+            <div class="product-card">
+                <div class="product-image">
+                    <img src="https://i.imgur.com/54LpARl.jpeg" alt="Автомобильные навесы">
+                </div>
+                <div class="product-info">
+                    <h3>Автомобильные навесы</h3>
+                    <div class="product-price">24 500 руб.</div>
+                    <ul class="product-features">
+                        <li>Размер: 3x6 м</li>
+                        <li>Материал: усиленная сталь</li>
+                        <li>Покрытие: поликарбонат 6 мм</li>
+                    </ul>
+                    <button class="btn" onclick="openModal(
+                        'Козырёк', 
+                        'https://i.imgur.com/54LpARl.jpeg', 
+                        'Прочный козырёк для защиты от солнца и осадков. Усиленный каркас выдерживает экстремальные снеговые нагрузки до 250 кг/м². Толстый поликарбонат обеспечивает надежную защиту.',
+                        ['Размеры: 3x6 м', 'Высота: 2.3 м', 'Каркас: оцинкованная сталь 25x25 мм', 'Покрытие: сотовый поликарбонат 6 мм', 'Гарантия: 7 лет'],
+                        '24 500 руб.'
+                    )">
+                        <i class="fas fa-shopping-cart"></i> Заказать
+                    </button>
+                </div>
+            </div>
+            
+<!-- Товар 3 - Мангал -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="https://i.imgur.com/3KbwYmk.jpeg" alt="Мангал">
+    </div>
+    <div class="product-info">
+        <h3>Мангал</h3>
+        <div class="product-price">35 000 руб.</div>
+        <ul class="product-features">
+            <li>Размер: 1.5x1 м</li>
+            <li>Материал: нержавеющая сталь</li>
+            <li>Дополнительно: крышка, решетка</li>
+        </ul>
+        <button class="btn" onclick="openModal(
+            'Мангал', 
+            'https://i.imgur.com/3KbwYmk.jpeg', 
+            'Профессиональный мангал для приготовления пищи на открытом воздухе. Изготовлен из нержавеющей стали толщиной 3 мм. В комплекте крышка и решетка для гриля.',
+            ['Размеры: 1.5x1 м', 'Высота: 1 м', 'Материал: нержавеющая сталь 3 мм', 'Комплектация: крышка, решетка', 'Гарантия: 10 лет'],
+            '35 000 руб.'
+        )">
+            <i class="fas fa-shopping-cart"></i> Заказать
+        </button>
+    </div>
+</div>
+<!-- Товар 4 - Беседка -->
+<div class="product-card">
+    <div class="product-image">
+        <img src="https://i.imgur.com/Af0poSH.jpeg" alt="Беседка">
+    </div>
+    <div class="product-info">
+        <h3>Беседка</h3>
+        <div class="product-price">45 000 руб.</div>
+        <ul class="product-features">
+            <li>Размер: 3x3 м</li>
+            <li>Материал: дерево</li>
+            <li>Покрытие: поликарбонат</li>
+        </ul>
+        <button class="btn" onclick="openModal(
+            'Беседка', 
+            'https://i.imgur.com/Af0poSH.jpeg', 
+            'Уютная деревянная беседка для отдыха на свежем воздухе. Прочная конструкция из натурального дерева с поликарбонатной крышей.',
+            ['Размеры: 3x3 м', 'Высота: 2.5 м', 'Материал: дерево', 'Покрытие: сотовый поликарбонат 6 мм', 'Гарантия: 5 лет'],
+            '45 000 руб.'
+        )">
+            <i class="fas fa-shopping-cart"></i> Заказать
+        </button>
+    </div>
+</div>
+    </section>
+
+    <!-- Преимущества -->
+    <section class="features" id="features">
+        <div class="section-title">
+            <h2>Почему выбирают нас</h2>
+            <p>Наши преимущества перед конкурентами</p>
+        </div>
+        
+        <div class="features-container">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Гарантия 10 лет</h3>
+                <p>Самая длительная гарантия на рынке. Мы уверены в качестве наших теплиц.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-truck"></i>
+                </div>
+                <h3>Быстрая доставка</h3>
+                <p>Доставим и установим теплицу в течение 3 дней после заказа.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-ruble-sign"></i>
+                </div>
+                <h3>Цены от производителя</h3>
+                <p>Собственное производство позволяет предлагать лучшие цены без посредников.</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3>Индивидуальные решения</h3>
+                <p>Изготовим теплицу по вашим размерам и требованиям.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Модальное окно товара -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title" id="modalTitle"></h3>
+                <span class="close" onclick="closeModal()">&times;</span>
+            </div>
+            <div class="modal-body">
+                <img id="modalImage" class="modal-image" src="" alt="Фото товара">
+                <div class="modal-details">
+                    <p class="modal-description" id="modalDescription"></p>
+                    <h4>Характеристики:</h4>
+                    <ul class="modal-features" id="modalFeatures">
+                    </ul>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="modal-price" id="modalPrice"></div>
+                <button class="btn btn-secondary" onclick="showContactsModal()">
+                    <i class="fas fa-phone"></i> Оформить заказ
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Модальное окно контактов -->
+    <div id="contactsModal" class="contacts-modal">
+        <div class="contacts-content">
+            <div class="contacts-header">
+                <h3 class="contacts-title">Контактная информация</h3>
+                <span class="close" onclick="closeContactsModal()">&times;</span>
+            </div>
+            <div class="contacts-body">
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div class="contact-info-text">
+                        <p><strong>Телефоны:</strong></p>
+                        <p>+7 (920) 775-20-79</p>
+                        <p>+7 (910) 155-55-10</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div class="contact-info-text">
+                        <p><strong>Email:</strong></p>
+                        <p>gostev-a@mail.ru</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="contact-info-text">
+                        <p><strong>Адрес:</strong></p>
+                        <p>г. Тула, ул. Производственная, 15</p>
+                    </div>
+                </div>
+                <div class="contact-info-item">
+                    <div class="contact-info-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <div class="contact-info-text">
+                        <p><strong>Режим работы:</strong></p>
+                        <p>Пн-Пт: 9:00 - 18:00</p>
+                        <p>Сб-Вс: 10:00 - 15:00</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Футер -->
+    <footer id="contacts">
+        <div class="footer-container">
+            <div class="footer-about">
+                <div class="footer-logo">
+                    <i class="fas fa-leaf"></i>
+                    Теплицы71
+                </div>
+                <p>Производство и продажа качественных теплиц в Туле и Тульской области. Работаем с 2010 года.</p>
+                <div class="social-links">
+                    <a href="#" style="color: white; margin-right: 15px;"><i class="fab fa-vk"></i></a>
+                    <a href="#" style="color: white; margin-right: 15px;"><i class="fab fa-instagram"></i></a>
+                    <a href="#" style="color: white;"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+            
+            <div class="footer-links">
+                <h3>Меню</h3>
+                <ul>
+                    <li><a href="#">Главная</a></li>
+                    <li><a href="#products">Каталог</a></li>
+                    <li><a href="#features">Преимущества</a></li>
+                    <li><a href="#contacts">Контакты</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-contact">
+                <h3>Контакты</h3>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <p>г. Тула, ул. Производственная, 15</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <p>+7 (920) 775-20-79</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <p>+7 (910) 155-55-10</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <p>gostev-a@mail.ru</p>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <p>Пн-Пт: 9:00 - 18:00<br>Сб-Вс: 10:00 - 15:00</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="copyright">
+            <p>&copy; 2024 Теплицы71. Все права защищены.</p>
+        </div>
+    </footer>
+
+    <!-- Кнопка "Наверх" -->
+    <div class="scroll-top" id="scrollTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Переключение темы
+        const themeSwitcher = document.getElementById('themeSwitcher');
+        const body = document.body;
+        
+        // Проверяем сохраненную тему в localStorage
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        if (currentTheme === 'dark') {
+            body.classList.add('dark-mode');
+            themeSwitcher.innerHTML = '<i class="fas fa-sun"></i><span>Светлая тема</span>';
+        }
+        
+        themeSwitcher.addEventListener('click', () => {
+            body.classList.toggle('dark-mode');
+            
+            if (body.classList.contains('dark-mode')) {
+                localStorage.setItem('theme', 'dark');
+                themeSwitcher.innerHTML = '<i class="fas fa-sun"></i><span>Светлая тема</span>';
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeSwitcher.innerHTML = '<i class="fas fa-moon"></i><span>Темная тема</span>';
+            }
+        });
+
+        // Модальное окно товара
+        function openModal(title, imageUrl, description, features, price) {
+            document.getElementById('modalTitle').textContent = title;
+            document.getElementById('modalImage').src = imageUrl;
+            document.getElementById('modalDescription').textContent = description;
+            document.getElementById('modalPrice').textContent = price;
+            
+            const featuresList = document.getElementById('modalFeatures');
+            featuresList.innerHTML = '';
+            features.forEach(feature => {
+                const li = document.createElement('li');
+                li.textContent = feature;
+                featuresList.appendChild(li);
+            });
+            
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.getElementById('productModal').classList.add('show');
+        }
+        
+        function closeModal() {
+            document.getElementById('productModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+            document.body.style.position = 'static';
+        }
+        
+        // Модальное окно контактов
+        function showContactsModal() {
+            closeModal();
+            document.body.style.overflow = 'hidden';
+            document.body.style.position = 'fixed';
+            document.body.style.width = '100%';
+            document.getElementById('contactsModal').classList.add('show');
+        }
+        
+        function closeContactsModal() {
+            document.getElementById('contactsModal').classList.remove('show');
+            document.body.style.overflow = 'auto';
+            document.body.style.position = 'static';
+        }
+        
+        // Закрытие модальных окон при клике вне их
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('productModal')) {
+                closeModal();
+            }
+            if (event.target == document.getElementById('contactsModal')) {
+                closeContactsModal();
+            }
+        }
+        
+        // Закрытие модальных окон при нажатии Esc
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                if (document.getElementById('productModal').classList.contains('show')) {
+                    closeModal();
+                }
+                if (document.getElementById('contactsModal').classList.contains('show')) {
+                    closeContactsModal();
+                }
+            }
+        });
+        
+        // Плавная прокрутка
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Кнопка "Наверх"
+        const scrollTopButton = document.getElementById('scrollTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                scrollTopButton.classList.add('show');
+            } else {
+                scrollTopButton.classList.remove('show');
+            }
+        });
+    </script>
+</body>
+</html>
